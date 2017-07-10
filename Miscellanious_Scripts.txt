@@ -1,0 +1,6 @@
+--Script to  redirect http connections to https
+
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
