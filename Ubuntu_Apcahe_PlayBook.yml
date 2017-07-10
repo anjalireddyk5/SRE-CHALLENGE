@@ -1,0 +1,23 @@
+#installing httpd 
+- name: installing
+  hosts: local
+  remote_user: ansible
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: '{{gather}}'
+  vars:
+    gather: true
+    package: httpd
+  tasks:
+  - name: Install the indicated softwaer
+    yum:
+      name: '{{ package }}'
+      state: latest
+
+	  
+	  
+      -name: Automated Test to check whether web server is up or not
+        wait_for:
+            port:8000
+            delay:10
