@@ -4,3 +4,12 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
+--To configure self signed SSLcertificate for https 
+
+elb_listeners:
+  - protocol: "https"
+    load_balancer_port: 443
+    ssl_certificate_id: "{{ (common_prod_account == True) | ternary(prod_cert,nonprod_cert) }}"
+    instance_protocol: "http"
+    instance_port: 8080
