@@ -10,6 +10,8 @@ Author: Geethanjali
 Tools Used:
 	Ansible
 	AWS EC2
+	
+	
 
 
 
@@ -24,4 +26,4 @@ Step by Step Process to implement the project
 	3)Installed APACHE on top it 
 	4)Modified the HTTPD.CONF file to modify the default Index.html file to show the content mentioned in the requirement
 	4)Configured HTTPS redirect to HTTP by inserting the code into HTTPD.CONF file
-
+5)Refer to screenshot docs attached to depict the same.
